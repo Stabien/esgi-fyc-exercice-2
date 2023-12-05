@@ -1,13 +1,18 @@
 <script>
-  import Button from './lib/Button.svelte';
-  import Input from './lib/Input.svelte';
+  import { Router, Route } from 'svelte-navigator';
+  import Home from './routes/Home.svelte';
+  import Recipes from './routes/Recipes.svelte';
+  import Recipe from './routes/Recipe.svelte';
+  import Navbar from './lib/Navbar.svelte';
 </script>
 
-<main>
-  <Button />
-  <Input />
-  <button>Mon bouton 2</button>
-</main>
-
-<style>
-</style>
+<Router>
+  <Navbar />
+  <div>
+    <Route path="/" component={Home} />
+    <Route path="/recipes" component={Recipes} />
+    <Route path="/recipes/:id" let:params>
+      <Recipe id={params.id} />
+    </Route>
+  </div>
+</Router>
