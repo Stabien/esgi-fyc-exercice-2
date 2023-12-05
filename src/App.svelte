@@ -2,7 +2,7 @@
   import { Router, Route } from 'svelte-navigator';
   import Home from './routes/Home.svelte';
   import Recipes from './routes/Recipes.svelte';
-  import Recipe from './routes/Recipe.svelte';
+  import Recipe from './routes/RecipeDetails.svelte';
   import Navbar from './lib/Navbar.svelte';
 </script>
 

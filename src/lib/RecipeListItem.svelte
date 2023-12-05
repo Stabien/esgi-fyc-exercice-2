@@ -1,11 +1,16 @@
 <script>
-  export let title;
-  export let picture;
+  import { navigate } from 'svelte-navigator';
+
+  export let data;
+
+  const navigateToDetails = () => {
+    navigate(`/recipes/${data.id}/`, { state: data });
+  };
 </script>
 
-<div>
-  <img src={picture} alt="preview" />
-  <h3>{title}</h3>
+<div on:click={navigateToDetails}>
+  <img src={data.picture} alt="preview" />
+  <h3>{data.name}</h3>
 </div>
 
 <style>

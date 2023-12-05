@@ -1,25 +1,28 @@
 <script>
   import { onMount } from 'svelte';
-  import Card from './Card.svelte';
-  import { Link } from 'svelte-navigator';
+  import RecipeListItem from './RecipeListItem.svelte';
 
   let recipeList = [];
+  let isLoading = true;
 
   onMount(async () => {
     const response = await fetch('data.json');
     const data = await response.json();
 
     recipeList = data;
+    isLoading = false;
   });
 </script>
 
-<div>
-  {#each recipeList as recipe}
-    <Link to={`/${recipe.name}`}>
-      <Card title={recipe.name} picture={recipe.picture} />
-    </Link>
-  {/each}
-</div>
+{#if isLoading}
+  <div>Chargement des recettes...</div>
+{:else}
+  <div>
+    {#each recipeList as recipe}
+      <RecipeListItem data={recipe} />
+    {/each}
+  </div>
+{/if}
 
 <style>
   div {
@@ -27,8 +30,7 @@
     flex-direction: row;
   }
 
-  div > :global(a) {
-    text-decoration: none;
+  div > :global(div) {
     margin-right: 20px;
     color: black;
   }

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Salade César",
     "picture": "salade-cesar.jpeg",
     "foodstuffs": [
@@ -11,6 +12,7 @@
     ]
   },
   {
+    "id": 2,
     "name": "Spaghetti Bolognaise",
     "picture": "spaghettis-bolognaise.jpg",
     "foodstuffs": [
@@ -24,6 +26,7 @@
     ]
   },
   {
+    "id": 3,
     "name": "Smoothie aux Fruits",
     "picture": "smoothie.jpg",
     "foodstuffs": [
