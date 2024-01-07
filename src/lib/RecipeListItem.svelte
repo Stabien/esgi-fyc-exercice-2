@@ -16,9 +16,10 @@
 <style>
   div {
     width: 300px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 4px 0px;
     border-radius: 10px;
     cursor: pointer;
+    background-color: white;
   }
 
   img {
@@ -26,11 +27,14 @@
     border-top-right-radius: 10px;
     width: 100%;
     height: 200px;
+    object-fit: cover;
   }
 
   h3 {
     margin: 0;
     padding: 15px 0px;
     margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
   }
 </style>

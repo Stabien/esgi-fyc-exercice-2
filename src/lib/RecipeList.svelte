@@ -17,7 +17,7 @@
 {#if isLoading}
   <div>Chargement des recettes...</div>
 {:else}
-  <div>
+  <div class="list-container">
     {#each recipeList as recipe}
       <RecipeListItem data={recipe} />
     {/each}
@@ -25,13 +25,16 @@
 {/if}
 
 <style>
-  div {
+  .list-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    width: 1000px;
   }
 
   div > :global(div) {
     margin-right: 20px;
     color: black;
+    margin-bottom: 20px;
   }
 </style>

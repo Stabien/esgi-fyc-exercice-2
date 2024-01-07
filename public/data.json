@@ -4,11 +4,11 @@
     "name": "Salade César",
     "picture": "salade-cesar.jpeg",
     "foodstuffs": [
-      {"name": "Laitue", "quantity": 200},
-      {"name": "Poulet grillé", "quantity": 150},
-      {"name": "Croûtons", "quantity": 50},
-      {"name": "Parmesan râpé", "quantity": 30},
-      {"name": "Sauce César", "quantity": 50}
+      {"name": "Laitue", "quantity": 200, "type": "WEIGHT"},
+      {"name": "Poulet grillé", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Croûtons", "quantity": 50, "type": "WEIGHT"},
+      {"name": "Parmesan râpé", "quantity": 30, "type": "WEIGHT"},
+      {"name": "Sauce César", "quantity": 50, "type": "WEIGHT"}
     ]
   },
   {
@@ -16,13 +16,13 @@
     "name": "Spaghetti Bolognaise",
     "picture": "spaghettis-bolognaise.jpg",
     "foodstuffs": [
-      {"name": "Spaghetti", "quantity": 250},
-      {"name": "Viande hachée", "quantity": 300},
-      {"name": "Oignon", "quantity": 1},
-      {"name": "Ail", "quantity": 2},
-      {"name": "Sauce tomate", "quantity": 400},
-      {"name": "Origan", "quantity": 5},
-      {"name": "Parmesan râpé", "quantity": 30}
+      {"name": "Spaghetti", "quantity": 250, "type": "WEIGHT"},
+      {"name": "Viande hachée", "quantity": 300, "type": "WEIGHT"},
+      {"name": "Oignon", "quantity": 1, "type": "PIECE"},
+      {"name": "Ail", "quantity": 2, "type": "PIECE"},
+      {"name": "Sauce tomate", "quantity": 400, "type": "WEIGHT"},
+      {"name": "Origan", "quantity": 5, "type": "WEIGHT"},
+      {"name": "Parmesan râpé", "quantity": 30, "type": "WEIGHT"}
     ]
   },
   {
@@ -30,11 +30,104 @@
     "name": "Smoothie aux Fruits",
     "picture": "smoothie.jpg",
     "foodstuffs": [
-      {"name": "Banane", "quantity": 2},
-      {"name": "Fraise", "quantity": 150},
-      {"name": "Yaourt nature", "quantity": 200},
-      {"name": "Miel", "quantity": 30},
-      {"name": "Jus d'orange", "quantity": 150}
+      {"name": "Banane", "quantity": 2, "type": "PIECE"},
+      {"name": "Fraise", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Yaourt nature", "quantity": 200, "type": "WEIGHT"},
+      {"name": "Miel", "quantity": 30, "type": "WEIGHT"},
+      {"name": "Jus d'orange", "quantity": 150, "type": "WEIGHT"}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Steak Haché aux Champignons",
+    "picture": "steak-hache-champignons.jpg",
+    "foodstuffs": [
+      {"name": "Steak haché", "quantity": 200, "type": "WEIGHT"},
+      {"name": "Champignons", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Oignon", "quantity": 1, "type": "PIECE"},
+      {"name": "Ail", "quantity": 2, "type": "PIECE"},
+      {"name": "Sel", "quantity": 5, "type": "PIECE"},
+      {"name": "Poivre", "quantity": 3, "type": "WEIGHT"},
+      {"name": "Huile d'olive", "quantity": 30, "type": "WEIGHT"}
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Salade de Poulet et Avocat",
+    "picture": "salade-poulet-avocat.jpg",
+    "foodstuffs": [
+      {"name": "Laitue", "quantity": 200, "type": "WEIGHT"},
+      {"name": "Poulet grillé", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Avocat", "quantity": 1, "type": "PIECE"},
+      {"name": "Tomate", "quantity": 2, "type": "PIECE"},
+      {"name": "Vinaigrette", "quantity": 50, "type": "WEIGHT"}
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Poulet au Curry",
+    "picture": "poulet-curry.jpg",
+    "foodstuffs": [
+      {"name": "Filet de poulet", "quantity": 250, "type": "WEIGHT"},
+      {"name": "Curry en poudre", "quantity": 10, "type": "WEIGHT"},
+      {"name": "Lait de coco", "quantity": 200, "type": "WEIGHT"},
+      {"name": "Poivron rouge", "quantity": 1, "type": "PIECE"},
+      {"name": "Oignon", "quantity": 1, "type": "PIECE"},
+      {"name": "Ail", "quantity": 2, "type": "PIECE"},
+      {"name": "Riz basmati", "quantity": 150, "type": "WEIGHT"}
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Pizza Margherita",
+    "picture": "pizza-margherita.jpg",
+    "foodstuffs": [
+      {"name": "Pâte à pizza", "quantity": 1, "type": "PIECE"},
+      {"name": "Sauce tomate", "quantity": 100, "type": "WEIGHT"},
+      {"name": "Mozzarella", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Tomate cerise", "quantity": 50, "type": "WEIGHT"},
+      {"name": "Basilic frais", "quantity": 5, "type": "WEIGHT"},
+      {"name": "Huile d'olive", "quantity": 30, "type": "WEIGHT"}
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Pâtes Carbonara",
+    "picture": "pates-carbonara.jpg",
+    "foodstuffs": [
+      {"name": "Spaghetti", "quantity": 250, "type": "WEIGHT"},
+      {"name": "Lardons", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Œufs", "quantity": 2, "type": "PIECE"},
+      {"name": "Parmesan râpé", "quantity": 30, "type": "WEIGHT"},
+      {"name": "Poivre noir", "quantity": 5, "type": "WEIGHT"}
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Salade de Quinoa aux Légumes",
+    "picture": "salade-quinoa-legumes.jpg",
+    "foodstuffs": [
+      {"name": "Quinoa cuit", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Tomate", "quantity": 2, "type": "PIECE"},
+      {"name": "Concombre", "quantity": 1, "type": "PIECE"},
+      {"name": "Poivron rouge", "quantity": 1, "type": "PIECE"},
+      {"name": "Feta", "quantity": 50, "type": "WEIGHT"},
+      {"name": "Olives noires", "quantity": 30, "type": "WEIGHT"},
+      {"name": "Vinaigrette", "quantity": 40, "type": "WEIGHT"}
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Risotto aux Champignons",
+    "picture": "risotto-champignons.jpg",
+    "foodstuffs": [
+      {"name": "Riz Arborio", "quantity": 200, "type": "WEIGHT"},
+      {"name": "Champignons", "quantity": 150, "type": "WEIGHT"},
+      {"name": "Vin blanc sec", "quantity": 50, "type": "WEIGHT"},
+      {"name": "Bouillon de légumes", "quantity": 400, "type": "WEIGHT"},
+      {"name": "Parmesan râpé", "quantity": 30, "type": "WEIGHT"},
+      {"name": "Beurre", "quantity": 20, "type": "WEIGHT"},
+      {"name": "Sel", "quantity": 5, "type": "WEIGHT"}
     ]
   }
 ]
