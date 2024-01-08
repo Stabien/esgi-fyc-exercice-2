@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import { useLocation } from 'svelte-navigator';
 
   export let id;
@@ -12,28 +11,43 @@
   <img src={`/${data.picture}`} alt={id} />
   <h1>{data.name}</h1>
 
-  <h2>Ingrédients</h2>
+  <h2>Liste d'ingrédients</h2>
   {#each data.foodstuffs as foodstuff}
     <div class="foodstuff">
-      <h3>{foodstuff.name}</h3>
-      <span>Quantité : {foodstuff.quantity}g</span>
+      {#if foodstuff.type === "PIECE"}
+        <span>- {foodstuff.quantity} {foodstuff.name}</span>
+      {:else}
+        <span>- {foodstuff.quantity}g de {foodstuff.name}</span>
+      {/if}
     </div>
   {/each}
 </div>
 
 <style>
-  .container {
-    margin-top: 10px;
-    margin-left: 10px;
+  h1 {
+    margin-top: 5px;
+    color: #FF6F61;
   }
 
-  img {
-    width: 300px;
-    height: 180px;
+  .container {
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
     border-radius: 10px;
   }
 
-  .foodstuff h3 {
-    margin-bottom: 0;
+  img {
+    width: 500px;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .foodstuff span {
+    display: block;
+    margin-bottom: 20px;
   }
 </style>

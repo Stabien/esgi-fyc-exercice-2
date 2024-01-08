@@ -1,13 +1,43 @@
 <script>
-  import { Link } from 'svelte-navigator';
+  import RecipeList from '../lib/RecipeList.svelte';
+
+  let recipes = []
+  let dailyRecipes = []
+
+  const fetchRecipes = async () => {
+    const response = await fetch('data.json');
+    const data = await response.json();
+
+    recipes = data
+    dailyRecipes = recipes.filter(recipe => recipe.dailyRecipe !== undefined)
+  };
+
 </script>
 
 <div>
   <h1>Bienvenue sur Sveltmiton</h1>
-  <Link to="/recipes">Découvrez dès à présent toutes nos recettes !</Link>
+  <h2>Nos recettes du jour</h2>
+  {#await fetchRecipes()}
+    <span>Chargement des recettes du jour...</span>
+  {:then}
+    <RecipeList recipes={dailyRecipes} />
+  {:catch}
+    <span>Impossible de charger les recettes du jour</span>
+  {/await}
 </div>
 
 <style>
+  h1 {
+    text-align: center;
+    border-radius: 10px;
+    color: #FF6F61;
+    font-size: 24px;
+    width: fit-content;
+    padding: 10px 40px;
+    margin: auto;
+    margin-top: 40px;
+    border: 2px solid #FF6F61;
+  }
   div {
     display: flex;
     flex-direction: column;

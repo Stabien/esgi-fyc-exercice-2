@@ -9,7 +9,8 @@
       {"name": "Croûtons", "quantity": 50, "type": "WEIGHT"},
       {"name": "Parmesan râpé", "quantity": 30, "type": "WEIGHT"},
       {"name": "Sauce César", "quantity": 50, "type": "WEIGHT"}
-    ]
+    ],
+    "dailyRecipe": true
   },
   {
     "id": 2,
@@ -19,7 +20,7 @@
       {"name": "Spaghetti", "quantity": 250, "type": "WEIGHT"},
       {"name": "Viande hachée", "quantity": 300, "type": "WEIGHT"},
       {"name": "Oignon", "quantity": 1, "type": "PIECE"},
-      {"name": "Ail", "quantity": 2, "type": "PIECE"},
+      {"name": "Gousses d'ail", "quantity": 2, "type": "PIECE"},
       {"name": "Sauce tomate", "quantity": 400, "type": "WEIGHT"},
       {"name": "Origan", "quantity": 5, "type": "WEIGHT"},
       {"name": "Parmesan râpé", "quantity": 30, "type": "WEIGHT"}
@@ -30,7 +31,7 @@
     "name": "Smoothie aux Fruits",
     "picture": "smoothie.jpg",
     "foodstuffs": [
-      {"name": "Banane", "quantity": 2, "type": "PIECE"},
+      {"name": "Bananes", "quantity": 2, "type": "PIECE"},
       {"name": "Fraise", "quantity": 150, "type": "WEIGHT"},
       {"name": "Yaourt nature", "quantity": 200, "type": "WEIGHT"},
       {"name": "Miel", "quantity": 30, "type": "WEIGHT"},
@@ -45,11 +46,12 @@
       {"name": "Steak haché", "quantity": 200, "type": "WEIGHT"},
       {"name": "Champignons", "quantity": 150, "type": "WEIGHT"},
       {"name": "Oignon", "quantity": 1, "type": "PIECE"},
-      {"name": "Ail", "quantity": 2, "type": "PIECE"},
-      {"name": "Sel", "quantity": 5, "type": "PIECE"},
+      {"name": "Gousses d'ail", "quantity": 2, "type": "PIECE"},
+      {"name": "Sel", "quantity": 5, "type": "WEIGHT"},
       {"name": "Poivre", "quantity": 3, "type": "WEIGHT"},
       {"name": "Huile d'olive", "quantity": 30, "type": "WEIGHT"}
-    ]
+    ],
+    "dailyRecipe": true
   },
   {
     "id": 5,
@@ -59,7 +61,7 @@
       {"name": "Laitue", "quantity": 200, "type": "WEIGHT"},
       {"name": "Poulet grillé", "quantity": 150, "type": "WEIGHT"},
       {"name": "Avocat", "quantity": 1, "type": "PIECE"},
-      {"name": "Tomate", "quantity": 2, "type": "PIECE"},
+      {"name": "Tomates", "quantity": 2, "type": "PIECE"},
       {"name": "Vinaigrette", "quantity": 50, "type": "WEIGHT"}
     ]
   },
@@ -73,9 +75,10 @@
       {"name": "Lait de coco", "quantity": 200, "type": "WEIGHT"},
       {"name": "Poivron rouge", "quantity": 1, "type": "PIECE"},
       {"name": "Oignon", "quantity": 1, "type": "PIECE"},
-      {"name": "Ail", "quantity": 2, "type": "PIECE"},
+      {"name": "Gousses d'ail", "quantity": 2, "type": "PIECE"},
       {"name": "Riz basmati", "quantity": 150, "type": "WEIGHT"}
-    ]
+    ],
+    "dailyRecipe": true
   },
   {
     "id": 7,
@@ -108,7 +111,7 @@
     "picture": "salade-quinoa-legumes.jpg",
     "foodstuffs": [
       {"name": "Quinoa cuit", "quantity": 150, "type": "WEIGHT"},
-      {"name": "Tomate", "quantity": 2, "type": "PIECE"},
+      {"name": "Tomates", "quantity": 2, "type": "PIECE"},
       {"name": "Concombre", "quantity": 1, "type": "PIECE"},
       {"name": "Poivron rouge", "quantity": 1, "type": "PIECE"},
       {"name": "Feta", "quantity": 50, "type": "WEIGHT"},

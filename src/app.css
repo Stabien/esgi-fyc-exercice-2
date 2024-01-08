@@ -5,6 +5,10 @@
   src: url('%sveltekit.assets%/Roboto-Regular') format('ttf');
 }
 
+h1 {
+  outline: none;
+}
+
 body {
   padding: 0;
   margin: 0;

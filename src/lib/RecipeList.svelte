@@ -1,28 +1,14 @@
 <script>
-  import { onMount } from 'svelte';
   import RecipeListItem from './RecipeListItem.svelte';
 
-  let recipeList = [];
-  let isLoading = true;
-
-  onMount(async () => {
-    const response = await fetch('data.json');
-    const data = await response.json();
-
-    recipeList = data;
-    isLoading = false;
-  });
+  export let recipes = []
 </script>
 
-{#if isLoading}
-  <div>Chargement des recettes...</div>
-{:else}
   <div class="list-container">
-    {#each recipeList as recipe}
+    {#each recipes as recipe}
       <RecipeListItem data={recipe} />
     {/each}
   </div>
-{/if}
 
 <style>
   .list-container {

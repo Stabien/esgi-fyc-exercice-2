@@ -3,13 +3,15 @@
 </script>
 
 <div>
-  <h1>Nos recettes</h1>
-  <RecipeList />
+  <h1>Toutes nos recettes</h1>
+  
 </div>
 
 <style>
   h1 {
     text-align: center;
+    font-size: 24px;
+    font-weight: 500;
   }
 
   div {

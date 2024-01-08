@@ -27,6 +27,8 @@
     padding-left: 60px;
     padding-right: 20px;
     box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 4px 0px;
+    position: sticky;
+    top: 0px;
   }
 
   .nav-center-content {

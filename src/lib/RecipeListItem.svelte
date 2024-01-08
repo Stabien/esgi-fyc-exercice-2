@@ -34,7 +34,8 @@
     margin: 0;
     padding: 15px 0px;
     margin-left: 10px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
+    color: #3F3F3F
   }
 </style>
