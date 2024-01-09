@@ -10,8 +10,8 @@
     (store) => (recipeStoreValue = store)
   );
 
-  $: searchRecipes = recipeStoreValue.recipes.filter((recipe) =>
-    recipe.name.toLowerCase().includes(recipeStoreValue.search.toLowerCase())
+  $: favoriteRecipes = recipeStoreValue.recipes.filter((recipe) =>
+    recipeStoreValue.favorites.includes(recipe.id.toString())
   );
 
   onDestroy(unsubscribe);
@@ -24,7 +24,7 @@
   {:else if recipeStoreValue.error}
     <span>Impossible de charger les recettes du jour</span>
   {:else}
-    <RecipeList recipes={searchRecipes} />
+    <RecipeList recipes={favoriteRecipes} />
   {/if}
 </div>
 

@@ -4,6 +4,10 @@
   import Recipes from './routes/Recipes.svelte';
   import Recipe from './routes/RecipeDetails.svelte';
   import Navbar from './lib/Navbar.svelte';
+  import { fillRecipeStore } from './store';
+  import Favorites from './routes/Favorites.svelte';
+
+  fillRecipeStore();
 </script>
 
 <Router>
@@ -14,5 +18,6 @@
     <Route path="/recipes/:id" let:params>
       <Recipe id={params.id} />
     </Route>
+    <Route path="/favorites" component={Favorites} />
   </div>
 </Router>

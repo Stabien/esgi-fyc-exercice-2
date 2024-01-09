@@ -1,42 +1,45 @@
 <script>
+  import { get } from 'svelte/store';
   import RecipeList from '../lib/RecipeList.svelte';
+  import { recipeStore } from '../store';
+  import { onDestroy } from 'svelte';
 
-  let recipes = []
-  let dailyRecipes = []
+  let recipeStoreValue = get(recipeStore);
 
-  const fetchRecipes = async () => {
-    const response = await fetch('data.json');
-    const data = await response.json();
+  const unsubscribe = recipeStore.subscribe(
+    (store) => (recipeStoreValue = store)
+  );
 
-    recipes = data
-    dailyRecipes = recipes.filter(recipe => recipe.dailyRecipe !== undefined)
-  };
+  $: dailyRecipes = recipeStoreValue.recipes.filter(
+    (recipe) => recipe.dailyRecipe !== undefined
+  );
 
+  onDestroy(unsubscribe);
 </script>
 
 <div>
   <h1>Bienvenue sur Sveltmiton</h1>
   <h2>Nos recettes du jour</h2>
-  {#await fetchRecipes()}
+  {#if !recipeStoreValue.isLoaded}
     <span>Chargement des recettes du jour...</span>
-  {:then}
-    <RecipeList recipes={dailyRecipes} />
-  {:catch}
+  {:else if recipeStoreValue.error}
     <span>Impossible de charger les recettes du jour</span>
-  {/await}
+  {:else}
+    <RecipeList recipes={dailyRecipes} />
+  {/if}
 </div>
 
 <style>
   h1 {
     text-align: center;
     border-radius: 10px;
-    color: #FF6F61;
+    color: #ff6f61;
     font-size: 24px;
     width: fit-content;
     padding: 10px 40px;
     margin: auto;
     margin-top: 40px;
-    border: 2px solid #FF6F61;
+    border: 2px solid #ff6f61;
   }
   div {
     display: flex;

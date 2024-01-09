@@ -13,7 +13,7 @@
     </div>
   </div>
   <span>
-    <Link to="/recipes">Mes recettes favorites</Link>
+    <Link to="/favorites">Mes recettes favorites</Link>
   </span>
 </nav>
 
@@ -66,6 +66,6 @@
   nav span > :global(a) {
     color: white;
     text-decoration: none;
-    margin: auto 10;
+    margin: auto 10px;
   }
 </style>

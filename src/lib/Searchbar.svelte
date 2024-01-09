@@ -1,17 +1,23 @@
 <script>
-  import searchIcon from "../assets/icon-search.png"
+  import { useNavigate } from 'svelte-navigator';
+  import searchIcon from '../assets/icon-search.png';
+  import { recipeStore } from '../store';
 
   export let placeholder;
 
+  const navigate = useNavigate();
+  let value = '';
+
   const onSubmit = () => {
-    console.log("Event submit")
-  }
+    recipeStore.update((store) => ({ ...store, search: value }));
+    navigate('/recipes');
+  };
 </script>
 
 <div class="container">
-  <input type="text" {placeholder} />
+  <input type="text" {placeholder} bind:value />
   <div class="icon-container" on:click={onSubmit}>
-    <img src={searchIcon} alt="icon-search" /> 
+    <img src={searchIcon} alt="icon-search" />
   </div>
 </div>
 
