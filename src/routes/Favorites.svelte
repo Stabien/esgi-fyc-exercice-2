@@ -1,27 +1,21 @@
 <script>
-  import { get } from 'svelte/store';
   import RecipeList from '../lib/RecipeList.svelte';
-  import { recipeStore } from '../store';
-  import { onDestroy } from 'svelte';
+  import { favoriteStore } from '../store';
+  import { getContext } from 'svelte';
 
-  let recipeStoreValue = get(recipeStore);
+  let recipeStore = getContext('recipeStore');
 
-  const unsubscribe = recipeStore.subscribe(
-    (store) => (recipeStoreValue = store)
+  $: recipes = $recipeStore.recipes;
+  $: favoriteRecipes = recipes.filter((recipe) =>
+    $favoriteStore.includes(recipe.id.toString())
   );
-
-  $: favoriteRecipes = recipeStoreValue.recipes.filter((recipe) =>
-    recipeStoreValue.favorites.includes(recipe.id.toString())
-  );
-
-  onDestroy(unsubscribe);
 </script>
 
 <div>
   <h1>Toutes nos recettes</h1>
-  {#if !recipeStoreValue.isLoaded}
+  {#if !$recipeStore.isLoaded}
     <span>Chargement des recettes...</span>
-  {:else if recipeStoreValue.error}
+  {:else if $recipeStore.error}
     <span>Impossible de charger les recettes du jour</span>
   {:else}
     <RecipeList recipes={favoriteRecipes} />

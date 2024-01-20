@@ -1,6 +1,15 @@
 <script>
-  import { Link } from 'svelte-navigator';
+  import { Link, useNavigate } from 'svelte-navigator';
   import Searchbar from './Searchbar.svelte';
+  import { isMatchingSearchRegex } from '../utils';
+
+  const navigate = useNavigate();
+
+  const onSearch = (event) => {
+    if (isMatchingSearchRegex(event.detail.value)) {
+      navigate(`/recipes/search/${event.detail.value}`);
+    }
+  };
 </script>
 
 <nav>
@@ -9,7 +18,7 @@
       <Link to="/">Sveltmiton</Link>
     </h1>
     <div class="searchbar-container">
-      <Searchbar placeholder="Rechercher une recette..." />
+      <Searchbar on:search={onSearch} placeholder="Rechercher une recette..." />
     </div>
   </div>
   <span>

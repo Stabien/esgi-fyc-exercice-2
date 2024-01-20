@@ -1,3 +1,7 @@
+const searchRegex = /[a-zA-Z]/
+
+export const isMatchingSearchRegex = (search) => searchRegex.test(search)
+
 export const addRecipeToFavorites = (recipeId) => {
   if (!localStorage.getItem('favorites')) {
     localStorage.setItem('favorites', JSON.stringify([]))

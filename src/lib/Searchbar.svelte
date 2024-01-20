@@ -1,27 +1,27 @@
 <script>
-  import { useNavigate } from 'svelte-navigator';
   import searchIcon from '../assets/icon-search.png';
-  import { recipeStore } from '../store';
+  import { createEventDispatcher } from 'svelte';
 
   export let placeholder;
-
-  const navigate = useNavigate();
   let value = '';
 
+  const dispatch = createEventDispatcher();
+
   const onSubmit = () => {
-    recipeStore.update((store) => ({ ...store, search: value }));
-    navigate('/recipes');
+    dispatch('search', {
+      value: value.toLowerCase(),
+    });
   };
 </script>
 
 <div class="container">
   <input type="text" {placeholder} bind:value />
-  <div class="icon-container" on:click={onSubmit}>
+  <button class="icon-container" on:click={onSubmit}>
     <img src={searchIcon} alt="icon-search" />
-  </div>
+  </button>
 </div>
 
-<style scoped>
+<style>
   .container {
     display: flex;
     flex-direction: row;
@@ -49,9 +49,10 @@
     background-color: #ff6f61;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 7px;
+    padding: 8px;
     text-align: center;
     cursor: pointer;
+    border: none;
   }
 
   .icon-container img {

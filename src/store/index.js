@@ -7,10 +7,10 @@ const favorites = localStorage.getItem('favorites') ? JSON.parse(localStorage.ge
 export const recipeStore = writable({
   recipes: [],
   isLoaded: false,
-  search: "",
   error: null,
-  favorites
 });
+
+export const favoriteStore = writable(favorites)
 
 export const fillRecipeStore = async () => {
   if (get(recipeStore).isLoaded) {
@@ -28,10 +28,10 @@ export const fillRecipeStore = async () => {
 
 export const addToFavorites = (recipeId) => {
   addRecipeToFavorites(recipeId)
-  recipeStore.update((store) => ({ ...store, favorites: [...store.favorites, recipeId]}))
+  favoriteStore.update((store) => ([...store, recipeId]))
 }
 
 export const removeFromFavorites = (recipeId) => {
   removeRecipeFromFavorites(recipeId)
-  recipeStore.update((store) => ({ ...store, favorites: [...store.favorites.filter(id => id !== recipeId)]}))
+  favoriteStore.update((store) => ([...store.filter(id => id !== recipeId)]))
 }

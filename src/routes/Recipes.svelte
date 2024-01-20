@@ -1,27 +1,23 @@
 <script>
-  import { get } from 'svelte/store';
+  import { useParams } from 'svelte-navigator';
   import RecipeList from '../lib/RecipeList.svelte';
-  import { recipeStore } from '../store';
-  import { onDestroy } from 'svelte';
+  import { getContext } from 'svelte';
 
-  let recipeStoreValue = get(recipeStore);
+  const params = useParams();
 
-  const unsubscribe = recipeStore.subscribe(
-    (store) => (recipeStoreValue = store)
+  let recipeStore = getContext('recipeStore');
+
+  $: recipes = $recipeStore.recipes;
+  $: searchRecipes = recipes.filter((recipe) =>
+    recipe.name.toLowerCase().includes($params.search.toLowerCase())
   );
-
-  $: searchRecipes = recipeStoreValue.recipes.filter((recipe) =>
-    recipe.name.toLowerCase().includes(recipeStoreValue.search.toLowerCase())
-  );
-
-  onDestroy(unsubscribe);
 </script>
 
 <div>
   <h1>Toutes nos recettes</h1>
-  {#if !recipeStoreValue.isLoaded}
+  {#if !$recipeStore.isLoaded}
     <span>Chargement des recettes...</span>
-  {:else if recipeStoreValue.error}
+  {:else if $recipeStore.error}
     <span>Impossible de charger les recettes du jour</span>
   {:else}
     <RecipeList recipes={searchRecipes} />

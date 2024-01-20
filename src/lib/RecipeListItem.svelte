@@ -8,18 +8,22 @@
   };
 </script>
 
-<div on:click={navigateToDetails}>
-  <img src={data.picture} alt="preview" />
-  <h3>{data.name}</h3>
+<div>
+  <button on:click={navigateToDetails}>
+    <img src="/{data.picture}" alt="preview" />
+    <h3>{data.name}</h3>
+  </button>
 </div>
 
 <style>
-  div {
+  button {
     width: 300px;
     box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 4px 0px;
     border-radius: 10px;
     cursor: pointer;
     background-color: white;
+    padding: 0;
+    border: none;
   }
 
   img {
@@ -36,6 +40,7 @@
     margin-left: 10px;
     font-size: 14px;
     font-weight: 400;
-    color: #3F3F3F
+    color: #3f3f3f;
+    text-align: left;
   }
 </style>
