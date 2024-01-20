@@ -8,8 +8,6 @@
   const location = useLocation();
   const data = $location.state;
 
-  $: console.log($favoriteStore);
-
   let toast = {
     isDisplayed: false,
     variant: 'INFORMATION',

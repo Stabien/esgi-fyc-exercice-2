@@ -14,7 +14,7 @@
 </script>
 
 <div>
-  <h1>Toutes nos recettes</h1>
+  <h1>Recettes correspondant à votre recherche</h1>
   {#if !$recipeStore.isLoaded}
     <span>Chargement des recettes...</span>
   {:else if $recipeStore.error}
@@ -26,7 +26,6 @@
 
 <style>
   h1 {
-    text-align: center;
     font-size: 24px;
     font-weight: 500;
   }
