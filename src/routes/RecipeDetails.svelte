@@ -14,44 +14,44 @@
     message: 'Recette ajoutée aux favoris',
   };
 
-  const remove = () => {
-    removeFromFavorites(id);
-
+  const toggleToast = (label) => {
     toast.isDisplayed = true;
     toast.variant = 'INFORMATION';
-    toast.message = 'Recette retirée des favoris';
+    toast.message = label;
+  };
+
+  const remove = () => {
+    removeFromFavorites(id);
+    toggleToast('Recette retirée des favoris');
   };
 
   const add = () => {
     addToFavorites(id);
-
-    toast.isDisplayed = true;
-    toast.variant = 'INFORMATION';
-    toast.message = 'Recette ajoutée aux favoris';
+    toggleToast('Recette ajoutée aux favoris');
   };
 </script>
 
 {#if toast.isDisplayed}
-  <Toast variant={toast.variant} bind:isDisplayed={toast.isDisplayed}
-    >{toast.message}</Toast
-  >
+  <Toast variant={toast.variant} bind:isDisplayed={toast.isDisplayed}>
+    {toast.message}
+  </Toast>
 {/if}
 
 <div class="container">
   <div class="header-container">
     <img src={`/${data.picture}`} alt={id} />
     {#if $favoriteStore.includes(id)}
-      <button class="remove-favorite-button" on:click={remove}
-        >Retirer des favoris</button
-      >
+      <button class="remove-favorite-button" on:click={remove}>
+        Retirer des favoris
+      </button>
     {:else}
-      <button class="add-favorite-button" on:click={add}
-        >Ajouter aux favoris</button
-      >
+      <button class="add-favorite-button" on:click={add}>
+        Ajouter aux favoris
+      </button>
     {/if}
   </div>
-  <h1>{data.name}</h1>
 
+  <h1>{data.name}</h1>
   <h2>Liste d'ingrédients</h2>
   {#each data.foodstuffs as foodstuff}
     <div class="foodstuff">

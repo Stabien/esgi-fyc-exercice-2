@@ -2,7 +2,7 @@ const searchRegex = /[a-zA-Z]/
 
 export const isMatchingSearchRegex = (search) => searchRegex.test(search)
 
-export const addRecipeToFavorites = (recipeId) => {
+export const addLocalFavorite = (recipeId) => {
   if (!localStorage.getItem('favorites')) {
     localStorage.setItem('favorites', JSON.stringify([]))
   }
@@ -11,7 +11,7 @@ export const addRecipeToFavorites = (recipeId) => {
   localStorage.setItem('favorites', JSON.stringify([...favorites, recipeId]))
 }
 
-export const removeRecipeFromFavorites = (recipeId) => {
+export const removeLocalFavorite = (recipeId) => {
   const favorites = JSON.parse(localStorage.getItem('favorites'))
   const filteredFavorites = favorites.filter(id => recipeId !== id)
   

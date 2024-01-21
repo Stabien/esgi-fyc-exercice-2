@@ -6,11 +6,11 @@
   import Navbar from './lib/Navbar.svelte';
   import { fillRecipeStore, recipeStore } from './store';
   import Favorites from './routes/Favorites.svelte';
-  import { onMount, setContext } from 'svelte';
+  import { setContext } from 'svelte';
 
   setContext('recipeStore', recipeStore);
 
-  onMount(() => fillRecipeStore());
+  fillRecipeStore();
 </script>
 
 <Router>

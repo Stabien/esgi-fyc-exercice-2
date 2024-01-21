@@ -1,6 +1,6 @@
 import { get, writable } from 'svelte/store';
 import { fetchRecipes } from '../services';
-import { addRecipeToFavorites, removeRecipeFromFavorites } from '../utils';
+import { addLocalFavorite, removeLocalFavorite } from '../utils';
 
 const favorites = localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : []
 
@@ -27,11 +27,11 @@ export const fillRecipeStore = async () => {
 }
 
 export const addToFavorites = (recipeId) => {
-  addRecipeToFavorites(recipeId)
+  addLocalFavorite(recipeId)
   favoriteStore.update((store) => ([...store, recipeId]))
 }
 
 export const removeFromFavorites = (recipeId) => {
-  removeRecipeFromFavorites(recipeId)
+  removeLocalFavorite(recipeId)
   favoriteStore.update((store) => ([...store.filter(id => id !== recipeId)]))
 }

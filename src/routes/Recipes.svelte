@@ -14,7 +14,7 @@
 </script>
 
 <div>
-  <h1>Recettes correspondant à votre recherche</h1>
+  <h1>Recettes trouvées</h1>
   {#if !$recipeStore.isLoaded}
     <span>Chargement des recettes...</span>
   {:else if $recipeStore.error}
